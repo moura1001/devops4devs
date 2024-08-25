@@ -1,3 +1,4 @@
+# Depolyment do PostgreSQL
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,6 +30,7 @@ spec:
           - name: POSTGRES_DB
             value: reviewvideo
 ---
+# Service do PostgreSQL
 apiVersion: v1
 kind: Service
 metadata:
@@ -40,6 +42,7 @@ spec:
   - port: 5432
   type: ClusterIP
 ---
+# Depolyment da aplicação
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -59,7 +62,7 @@ spec:
         image: moura1001/devops:devops4dev-reviewvideo-v1
         resources:
           limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "500m"
         ports:
         - containerPort: 8080
@@ -69,6 +72,7 @@ spec:
           - name: ConnectionStrings_DefaultConnection
             value: "Host=postgres;Database=reviewvideo;Username=reviewvideo;Password=Passw0rd2024!"
 ---
+# Service da aplicação
 apiVersion: v1
 kind: Service
 metadata:
