@@ -26,3 +26,7 @@ Host=postgres;Database=reviewvideo;Username=reviewvideo;Password=Passw0rd2024!
 ### Instalação do Azure CLI
 
 [https://learn.microsoft.com/en-us/cli/azure/install-azure-cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+## Demonstração
+
+![GIF](docs/demonstracao.gif)
